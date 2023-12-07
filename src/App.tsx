@@ -1,5 +1,5 @@
 import './App.css'
-import Sidenav from './components/Sidenav/Sidenav'
+import Sidenav from './components/sidenav/Sidenav'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import WeatherPage from './pages/WeatherPage'
 import CitiesPage from './pages/CitiesPage'

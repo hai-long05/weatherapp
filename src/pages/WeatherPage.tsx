@@ -1,38 +1,45 @@
-import FetchingErrorModal from "../components/Error/FetchingErrorModal";
+import { useEffect, useState } from "react";
+import CurrentWeather from "../components/CurrentWeather";
 import FetchLoader from "../components/loader/FetchLoader";
-import { useQuery } from "@tanstack/react-query";
-import { fetchWeatherData } from "../services/fetchData";
+
+export type CordsType = {
+  latitude: number | null
+  longitude: number | null
+}
 
 const WeatherPage = () => {
 
-  const query = useFetchData();
-  const { data, isLoading, error } = query;
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  if (isLoading) {
-    return <FetchLoader />
-  }
+  const [location, setLocation] = useState<CordsType>({
+    latitude: null,
+    longitude: null,
+  });
 
-  if (error) {
-    console.error('Fetching error: ', error)
-    return <FetchingErrorModal />
-  }
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setLocation({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        });
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+    setIsLoading(false);
+  };
 
-  console.log(data)
+  useEffect(() => {
+    getLocation();
+  }, []);
 
   return (
     <div className="text-[#f0f1f1]">
-      WeatherPage
+      { isLoading ? (<FetchLoader />) : (<CurrentWeather location={location}/>) }
     </div>
   )
 }
 
-export const useFetchData = () => {
-  const query = useQuery({
-    queryFn: () => fetchWeatherData(),
-    queryKey: ["weather"],
-  });
-
-  return query
-}
 
 export default WeatherPage

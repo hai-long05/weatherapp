@@ -1,7 +1,7 @@
 import { faList, faMap, faSliders, faCloud } from '@fortawesome/free-solid-svg-icons'
 import umbrella from '../../assets/umbrella.png'
 import React from 'react'
-import SidenavItem from './SidenavItem'
+import SidenavItem from './SidenavItem';
 
 const navItems = [
   { name: "Weather", icon: faCloud },
