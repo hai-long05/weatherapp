@@ -17,14 +17,13 @@ const CurrentWeatherHeader: React.FC<CurrentWeatherHeaderInterface> = ({data}) =
     switch (data?.weather) {
       case "Clouds":
         return faCloud;
-
       case "Mist":
         return faWater;
     }
     return faSpinner;
   }
 
-
+  
   return (
     <>
       <div className='flex justify-between flex-row pt-10'>

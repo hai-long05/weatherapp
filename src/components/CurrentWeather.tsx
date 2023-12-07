@@ -42,17 +42,16 @@ const CurrentWeather: React.FC<CurrentWeatherInterface> = ({location}) => {
     <>
       {
         isLoading ? (
-          <div className='w-screen h-full'>
+          <div className='w-[2920%] h-full'>
             <FetchLoader /> 
           </div>
         ) : (
-          <div className='w-screen h-full grid grid-cols-10 pt-[45px] pl-12'>
-            <div className='col-span-5'>
+          <div className='w-[280%] h-full grid grid-cols-10 pt-[45px] pl-12'>
+            <div className='col-span-5 w-full'>
               <SearchInput />
               <CurrentWeatherHeader data={data}/>
             </div>
             <div className='col-span-5'>
-
             </div>
           </div>
         )
