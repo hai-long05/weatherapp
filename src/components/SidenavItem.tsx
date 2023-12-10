@@ -15,7 +15,7 @@ const SidenavItem: React.FC<SidenavItemProps> = ({item}) => {
 
   return (
     <Link key={item.name} to={'/' + item.name.toLowerCase()}>
-      <div className={'flex flex-col justify-center items-center hover:bg-slate-600 rounded-lg w-20 h-16 cursor-pointer py-12 ' + (currentPage === item.name.toLowerCase() ? 'text-[#f0f1f1]' : 'text-[#a39f9e]')}>
+      <div className={'flex flex-col justify-center items-center hover:bg-slate-600 rounded-lg w-20 h-16 cursor-pointer py-12 ' + (currentPage === item.name.toLowerCase() ? 'text-[#f0f1f1]' : 'text-[#7c838e]')}>
           <FontAwesomeIcon icon={item.icon} size='2x' className=''/>
           <p className='font-semibold'>{item.name}</p>
       </div>

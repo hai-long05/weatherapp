@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import CurrentWeather from "../components/CurrentWeather";
+import Weather from "../components/Weather";
 import FetchLoader from "../components/loader/FetchLoader";
 
 export type CordsType = {
@@ -35,8 +35,8 @@ const WeatherPage = () => {
   }, []);
 
   return (
-    <div className="text-[#f0f1f1]">
-      { isLoading ? (<FetchLoader />) : (<CurrentWeather location={location}/>) }
+    <div className="text-[#f0f1f1] w-full">
+      { isLoading ? (<FetchLoader />) : (<Weather location={location}/>) }
     </div>
   )
 }
