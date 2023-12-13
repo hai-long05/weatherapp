@@ -1,4 +1,3 @@
-import React from 'react'
 import umbrella from '../assets/umbrella.png'
 import { Link } from 'react-router-dom'
 

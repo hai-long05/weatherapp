@@ -1,8 +1,12 @@
-import React from 'react'
+import GoogleMapReact from "google-map-react"
 
 const MapPage = () => {
   return (
-    <div>MapPage</div>
+    <div className='w-full h-full'>
+      <GoogleMapReact >
+
+      </GoogleMapReact>
+    </div>
   )
 }
 

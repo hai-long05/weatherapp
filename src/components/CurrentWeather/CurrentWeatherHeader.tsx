@@ -14,7 +14,7 @@ const CurrentWeatherHeader: React.FC<CurrentWeatherHeaderInterface> = ({data}) =
       <div className='flex justify-between flex-row pt-10'>
         <div className='flex-col'>
           <p className='pl-6 font-bold text-3xl'>{data?.city}</p>
-          <p className='pl-6 font-bold text-5xl pt-24'>{data?.temperature}°</p>
+          <p className='pl-6 font-bold text-5xl pt-16'>{data?.temperature}°</p>
         </div>
         <div className='flex justify-center items-center pr-10 flex-col'>
           <FontAwesomeIcon icon={getIconFromWeather(data?.weather)} size='5x' />
